@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W76-4G-4f3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="PXh-mv-fne"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXC-N3-wm4" userLabel="More Info View">
+                                <rect key="frame" x="16" y="510" width="568" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEAREST LOCATION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgO-tD-710">
+                                        <rect key="frame" x="5" y="3" width="114" height="14"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILq-se-sXa">
+                                        <rect key="frame" x="4" y="16" width="488" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEV-lS-0zi">
+                                        <rect key="frame" x="540" y="10" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Mtg-LL-gVY"/>
+                                            <constraint firstAttribute="width" constant="20" id="Qpr-GD-gj0"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_time">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openTimeView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="OdP-IB-wr6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVG-1F-cWh">
+                                        <rect key="frame" x="510" y="10" width="20" height="20"/>
+                                        <state key="normal" image="ic_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openIconView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gfO-VE-bVi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="wEV-lS-0zi" secondAttribute="centerY" id="8Ml-fw-pAM"/>
+                                    <constraint firstItem="xVG-1F-cWh" firstAttribute="leading" secondItem="ILq-se-sXa" secondAttribute="trailing" constant="18" id="CUO-za-ygG"/>
+                                    <constraint firstItem="JgO-tD-710" firstAttribute="top" secondItem="xXC-N3-wm4" secondAttribute="top" constant="3" id="NLM-wI-q10"/>
+                                    <constraint firstItem="xVG-1F-cWh" firstAttribute="top" secondItem="wEV-lS-0zi" secondAttribute="top" id="SvZ-XF-Ggr"/>
+                                    <constraint firstItem="ILq-se-sXa" firstAttribute="leading" secondItem="xXC-N3-wm4" secondAttribute="leading" constant="4" id="TpD-ut-99d"/>
+                                    <constraint firstItem="wEV-lS-0zi" firstAttribute="leading" secondItem="ILq-se-sXa" secondAttribute="trailing" constant="48" id="USt-G2-zom"/>
+                                    <constraint firstItem="wEV-lS-0zi" firstAttribute="top" secondItem="xXC-N3-wm4" secondAttribute="top" constant="10" id="Vpn-Ha-Ipm"/>
+                                    <constraint firstAttribute="trailing" secondItem="wEV-lS-0zi" secondAttribute="trailing" constant="8" id="gJR-Yi-551"/>
+                                    <constraint firstItem="wEV-lS-0zi" firstAttribute="leading" secondItem="xVG-1F-cWh" secondAttribute="trailing" constant="10" id="hDZ-YW-75o"/>
+                                    <constraint firstItem="JgO-tD-710" firstAttribute="leading" secondItem="xXC-N3-wm4" secondAttribute="leading" constant="5" id="rfP-99-wcd"/>
+                                    <constraint firstItem="xVG-1F-cWh" firstAttribute="bottom" secondItem="wEV-lS-0zi" secondAttribute="bottom" id="rxG-sj-HQB"/>
+                                    <constraint firstItem="ILq-se-sXa" firstAttribute="top" secondItem="xXC-N3-wm4" secondAttribute="top" constant="16" id="sI8-bg-HXD"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="530" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="3Jt-6J-cmU" userLabel="Icon View">
+                                <rect key="frame" x="207" y="198" width="187" height="204"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em2-qb-Mec">
+                                        <rect key="frame" x="20" y="56" width="60" height="60"/>
+                                        <state key="normal" image="bg_check" backgroundImage="ic_rocket">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="iconSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="a0f-ph-98x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuX-uA-3UP">
+                                        <rect key="frame" x="20" y="124" width="60" height="60"/>
+                                        <state key="normal" backgroundImage="ic_astronaut">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="iconSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZvZ-o4-M3v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RV-dC-6b6">
+                                        <rect key="frame" x="107" y="56" width="60" height="60"/>
+                                        <state key="normal" backgroundImage="ic_saucer">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="iconSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8VJ-UM-UxA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgk-z3-TzL">
+                                        <rect key="frame" x="107" y="124" width="60" height="60"/>
+                                        <state key="normal" backgroundImage="ic_satellite">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="iconSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GrZ-3B-YBF"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHOOSE ICON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DO-V2-Jdk">
+                                        <rect key="frame" x="20" y="20" width="147" height="21"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTR-2k-yzy">
+                                        <rect key="frame" x="162" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="ic_close">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeIconView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d3g-Tz-j0V"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="RUc-7J-Gxf"/>
+                                    <constraint firstAttribute="width" constant="187" id="us1-fh-8f7"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="530" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="jdU-zL-jmb" userLabel="Time View">
+                                <rect key="frame" x="206" y="198" width="187" height="204"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHOOSE REFRESH TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bu-9g-Zzk">
+                                        <rect key="frame" x="8" y="20" width="171" height="21"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRV-s9-4HE">
+                                        <rect key="frame" x="162" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="ic_close">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeTimeView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DVI-ut-Rgo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5t-uP-Jki">
+                                        <rect key="frame" x="20" y="56" width="60" height="60"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="40"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" red="0.28917178213771255" green="0.68939917127071826" blue="0.27137404811322735" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="timeSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hra-hB-DoK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7A-0O-CXT">
+                                        <rect key="frame" x="107" y="56" width="60" height="60"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="40"/>
+                                        <state key="normal" title="15">
+                                            <color key="titleColor" red="0.15383003449999999" green="0.36278532689999998" blue="0.68939917129999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="timeSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dVm-8W-uor"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="30" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nY-tE-JHB">
+                                        <rect key="frame" x="20" y="124" width="60" height="60"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="40"/>
+                                        <state key="normal" title="30">
+                                            <color key="titleColor" red="0.15383003449999999" green="0.36278532689999998" blue="0.68939917129999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="timeSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KlD-ne-p6E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="60" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ah-bI-acH">
+                                        <rect key="frame" x="107" y="124" width="60" height="60"/>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="40"/>
+                                        <state key="normal" title="60">
+                                            <color key="titleColor" red="0.15383003449999999" green="0.36278532689999998" blue="0.68939917129999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="timeSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YoJ-E6-g1j"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="in seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muz-TC-Jgg">
+                                        <rect key="frame" x="8" y="33" width="171" height="21"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="11"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="204" id="WFX-cu-cY4"/>
+                                    <constraint firstAttribute="width" constant="187" id="td2-7O-cjo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="3Jt-6J-cmU" secondAttribute="centerY" id="Dqg-Yk-Y4z"/>
+                            <constraint firstItem="xXC-N3-wm4" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Edl-Gb-H51"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xXC-N3-wm4" secondAttribute="bottom" constant="50" id="Idx-ie-eOE"/>
+                            <constraint firstAttribute="centerX" secondItem="jdU-zL-jmb" secondAttribute="centerX" constant="0.5" id="N4G-F1-EnA"/>
+                            <constraint firstItem="W76-4G-4f3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gCW-cW-LnH"/>
+                            <constraint firstAttribute="trailing" secondItem="W76-4G-4f3" secondAttribute="trailing" id="h58-0e-Bqq"/>
+                            <constraint firstItem="xXC-N3-wm4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="j5z-qd-Ura"/>
+                            <constraint firstAttribute="centerX" secondItem="3Jt-6J-cmU" secondAttribute="centerX" constant="-0.5" id="kpK-bo-wZb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="W76-4G-4f3" secondAttribute="bottom" id="pAJ-5U-jSl"/>
+                            <constraint firstAttribute="centerY" secondItem="jdU-zL-jmb" secondAttribute="centerY" id="wX6-JE-zZ4"/>
+                            <constraint firstItem="W76-4G-4f3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="ycV-md-FBB"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="ISSMapView" destination="W76-4G-4f3" id="32T-xk-y9v"/>
+                        <outlet property="iconAstronaut" destination="CuX-uA-3UP" id="0lS-8T-srd"/>
+                        <outlet property="iconRocket" destination="em2-qb-Mec" id="DC9-1O-yfd"/>
+                        <outlet property="iconSatellite" destination="Wgk-z3-TzL" id="vHJ-4J-Nqy"/>
+                        <outlet property="iconSaucer" destination="3RV-dC-6b6" id="yjN-Ci-AgD"/>
+                        <outlet property="iconView" destination="3Jt-6J-cmU" id="eKo-iL-pfV"/>
+                        <outlet property="moreInfo" destination="xXC-N3-wm4" id="d37-Y2-opH"/>
+                        <outlet property="nearLocation" destination="ILq-se-sXa" id="QNA-We-Xx3"/>
+                        <outlet property="timeFifteen" destination="N7A-0O-CXT" id="CTR-Ie-3UU"/>
+                        <outlet property="timeFive" destination="c5t-uP-Jki" id="s5h-4L-Kh4"/>
+                        <outlet property="timeSixty" destination="4ah-bI-acH" id="zh0-MU-wwn"/>
+                        <outlet property="timeThirty" destination="9nY-tE-JHB" id="4Dc-7D-bEO"/>
+                        <outlet property="timeView" destination="jdU-zL-jmb" id="b7t-nE-o4g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_check" width="60" height="60"/>
+        <image name="ic_astronaut" width="60" height="60"/>
+        <image name="ic_close" width="64" height="64"/>
+        <image name="ic_icon" width="25" height="25"/>
+        <image name="ic_rocket" width="60" height="60"/>
+        <image name="ic_satellite" width="60" height="60"/>
+        <image name="ic_saucer" width="60" height="60"/>
+        <image name="ic_time" width="25" height="25"/>
+    </resources>
+</document>
